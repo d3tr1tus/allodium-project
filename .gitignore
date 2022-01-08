@@ -1,0 +1,6 @@
+# Dev
+/dist
+/node_modules
+
+# Editor
+.idea
