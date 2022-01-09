@@ -1,12 +1,17 @@
 import { MainScene } from './scenes/main-scene';
+import { MenuScene } from "./scenes/menu-scene";
+import { BootScene } from "./scenes/boot-scene";
 
 export const GameConfig: Phaser.Types.Core.GameConfig = {
   title: 'Webpack-Boilerplate',
-  url: 'https://github.com/digitsensitive/phaser3-typescript',
-  version: '2.0',
-  width: 800,
-  height: 600,
-  backgroundColor: 0x3a404d,
+  version: '1.0',
+  width: '100vw',
+  height: '100vh',
+  // scale: {
+  //   mode: Phaser.Scale.FIT,
+  //   autoCenter: Phaser.Scale.CENTER_BOTH
+  // },
+  backgroundColor: '#98d687',
   type: Phaser.AUTO,
   parent: 'game',
   physics: {
@@ -15,5 +20,9 @@ export const GameConfig: Phaser.Types.Core.GameConfig = {
       gravity: { y: 200 }
     }
   },
-  scene: [MainScene]
+  render: {
+    pixelArt: true,
+    antialias: false
+  },
+  scene: [BootScene, MenuScene, MainScene]
 };
